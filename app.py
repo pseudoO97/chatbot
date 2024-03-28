@@ -3,9 +3,16 @@ from flask import Flask, render_template, request, redirect
 import openai
 import os
 import time
+from dotenv import load_dotenv
+import os
 
+# Chargez les variables d'environnement à partir du fichier .env
+load_dotenv()
+
+# Accédez aux variables d'environnement comme d'habitude
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 # Set the OpenAI API key
-openai.api_key = "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"
+openai.api_key = OPENAI_API_KEY
 
 # Define the name of the bot
 name = 'CookBOT'
